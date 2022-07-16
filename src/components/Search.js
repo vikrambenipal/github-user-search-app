@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 import icon_search from '../assets/icon-search.svg';
 
 const SearchContainer = styled.div`
@@ -13,6 +14,8 @@ const Search = () => {
         e.preventDefault();
         const searchValue = document.getElementById("value").value;
         console.log(searchValue);
+        axios.get("https://api.github.com/users/defunkt")
+        .then(res => console.log(res))
     }
 
     return (
