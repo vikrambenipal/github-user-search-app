@@ -9,12 +9,17 @@ import icon_website from '../assets/icon-website.svg';
 const User = ({ data }) => {
 
   const empty = "---";
+  const noResult = "Not Available";
 
   const getDate = (dateString) => {
     const date = new Date(dateString);
-    console.log(date.getMonth())
     const month = date.toLocaleString('default', { month: 'long' });
     return date.getDate() + " " + month + " " + date.getFullYear();
+  }
+
+  const checkResult = (result) => {
+    if(result) return result;
+    return noResult;
   }
 
   return (
@@ -49,12 +54,24 @@ const User = ({ data }) => {
         
         <div>
             <div>
-                <span><img src={icon_location}/><p>Location</p></span>
-                <span><img src={icon_website}/><p>Website</p></span>
+                <span>
+                    <img src={icon_location}/>
+                    {Object.keys(data).length !== 0 ? <p>{checkResult(data.location)}</p> : <p>{noResult}</p>}
+                </span>
+                <span>
+                    <img src={icon_website}/>
+                    {Object.keys(data).length !== 0 ? <p>{checkResult(data.blog)}</p> : <p>{noResult}</p>}
+                </span>
             </div>
             <div>
-                <span><img src={icon_twitter}/><p>Twitter</p></span>
-                <span><img src={icon_company}/><p>Company</p></span>
+                <span>
+                    <img src={icon_twitter}/>
+                    {Object.keys(data).length !== 0 ? <p>{checkResult(data.twitter_username)}</p> : <p>{noResult}</p>}
+                </span>
+                <span>
+                    <img src={icon_company}/>
+                    {Object.keys(data).length !== 0 ? <p>{checkResult(data.company)}</p> : <p>{noResult}</p>}
+                </span>
             </div>
         </div>
 

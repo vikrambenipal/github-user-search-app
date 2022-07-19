@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     console.log(new Date("2016-12-28T01:37:11Z"));
-    axios.get(`https://api.github.com/users/vikrambenipal`)
+    axios.get(`https://api.github.com/users/octocat`)
     .then(res => {
         setData(res.data);
     })
