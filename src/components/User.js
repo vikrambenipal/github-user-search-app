@@ -6,15 +6,25 @@ import icon_location from '../assets/icon-location.svg';
 import icon_twitter from '../assets/icon-twitter.svg';
 import icon_website from '../assets/icon-website.svg';
 
-const User = () => {
+const User = ({ data }) => {
+
+  const empty = "---";
+
+  const getDate = (dateString) => {
+    const date = new Date(dateString);
+    console.log(date.getMonth())
+    const month = date.toLocaleString('default', { month: 'long' });
+    return date.getDate() + " " + month + " " + date.getFullYear();
+  }
+
   return (
     <div>
         <div>
             <img src={placeholder} />
             <div>
-                <h2>Name</h2>
-                <p>username</p>
-                <p>date joined</p>
+                {Object.keys(data).length !== 0 ? <p>{data.name}</p> : <p>{empty}</p>}
+                {Object.keys(data).length !== 0 ? <p>{data.username}</p> : <p>{empty}</p>}
+                {Object.keys(data).length !== 0 ? <p>Joined {getDate(data.created_at)}</p> : <p>{empty}</p>}
             </div>
         </div>
 
@@ -25,15 +35,15 @@ const User = () => {
         <div>
             <div>
                 <p>Repos</p>
-                <p>8</p>
+                {Object.keys(data).length !== 0 ? <p>{data.public_repos}</p> : <p>{empty}</p>}
             </div>
             <div>
                 <p>Followers</p>
-                <p>3938</p>
+                {Object.keys(data).length !== 0 ? <p>{data.followers}</p> : <p>{empty}</p>}
             </div>
             <div>
                 <p>Following</p>
-                <p>9</p>
+                {Object.keys(data).length !== 0 ? <p>{data.following}</p> : <p>{empty}</p>}
             </div>
         </div>
         
@@ -47,7 +57,7 @@ const User = () => {
                 <span><img src={icon_company}/><p>Company</p></span>
             </div>
         </div>
-        
+
     </div>
   )
 }
