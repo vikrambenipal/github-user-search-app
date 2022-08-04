@@ -1,5 +1,22 @@
 import React from 'react'
-import placeholder from '../assets/favicon-32x32.png';
+import styled from 'styled-components';
+
+const Avatar = styled.img`
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+`
+const DescriptionContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+`
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid black;
+`
+
 
 const UserDescription = ({ data, empty }) => {
 
@@ -13,15 +30,17 @@ const UserDescription = ({ data, empty }) => {
     }
 
     return (
-        <div>
-            <img src={data.avatar_url} />
-            <div>
-                {Object.keys(data).length !== 0 ? <p>{data.name}</p> : <p>{empty}</p>}
-                {Object.keys(data).length !== 0 ? <p>@{data.login}</p> : <p>{empty}</p>}
-                {Object.keys(data).length !== 0 ? <p>Joined {getDate(data.created_at)}</p> : <p>{empty}</p>}
-            </div>
+        <Container>
+            <DescriptionContainer>
+                <Avatar src={data.avatar_url} />
+                <div>
+                    {Object.keys(data).length !== 0 ? <p>{data.name}</p> : <p>{empty}</p>}
+                    {Object.keys(data).length !== 0 ? <p>@{data.login}</p> : <p>{empty}</p>}
+                    {Object.keys(data).length !== 0 ? <p>Joined {getDate(data.created_at)}</p> : <p>{empty}</p>}
+                </div>
+            </DescriptionContainer>
             {data.bio ? <p>{data.bio}</p> : <p>{noBio}</p>}
-        </div>
+        </Container>
   )
 }
 export default UserDescription;
