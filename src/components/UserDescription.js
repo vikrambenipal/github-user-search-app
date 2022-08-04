@@ -17,7 +17,6 @@ const Container = styled.div`
     border: 3px solid black;
 `
 
-
 const UserDescription = ({ data, empty }) => {
 
     console.log(data);

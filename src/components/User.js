@@ -6,6 +6,7 @@ import UserStats from './UserStats';
 
 const Container = styled.div`
     border: 3px solid blue;
+    margin-top: 30px;
 `
 const User = ({ data }) => {
 
