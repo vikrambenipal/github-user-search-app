@@ -1,4 +1,5 @@
 import React from 'react';
+import UserDescription from './UserDescription';
 import styled from 'styled-components';
 import placeholder from '../assets/favicon-32x32.png';
 import icon_company from '../assets/icon-company.svg';
@@ -11,11 +12,7 @@ const User = ({ data }) => {
   const empty = "---";
   const noResult = "Not Available";
 
-  const getDate = (dateString) => {
-    const date = new Date(dateString);
-    const month = date.toLocaleString('default', { month: 'long' });
-    return date.getDate() + " " + month + " " + date.getFullYear();
-  }
+  
 
   const checkResult = (result) => {
     if(result) return result;
@@ -24,19 +21,7 @@ const User = ({ data }) => {
 
   return (
     <div>
-        <div>
-            <img src={placeholder} />
-            <div>
-                {Object.keys(data).length !== 0 ? <p>{data.name}</p> : <p>{empty}</p>}
-                {Object.keys(data).length !== 0 ? <p>{data.username}</p> : <p>{empty}</p>}
-                {Object.keys(data).length !== 0 ? <p>Joined {getDate(data.created_at)}</p> : <p>{empty}</p>}
-            </div>
-        </div>
-
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. 
-            Quisque volutpat mattis eros.
-        </p>
-
+        <UserDescription data={data} empty={empty} />
         <div>
             <div>
                 <p>Repos</p>
