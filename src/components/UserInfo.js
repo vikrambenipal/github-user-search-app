@@ -4,11 +4,13 @@ import styled from 'styled-components';
 const Container = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
     border: 3px solid red;
-    width: 90%;
+    //width: 80%;
     margin: 0 auto;
+    // padding-left: 10px;
+    // padding-right: 10px;
 `
 const UserInfo = ({ data, empty }) => {
   return (
