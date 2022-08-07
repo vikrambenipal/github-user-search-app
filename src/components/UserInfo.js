@@ -7,6 +7,8 @@ const Container = styled.div`
     justify-content: center;
     text-align: center;
     border: 3px solid red;
+    width: 90%;
+    margin: 0 auto;
 `
 const UserInfo = ({ data, empty }) => {
   return (
