@@ -8,13 +8,20 @@ const SearchContainer = styled.div`
     justify-content: center;
     width: 100%;
 `
+const SearchIcon = styled.img`
+    margin-right: -40px;
+    z-index: 2;
+`
 const Input = styled.input`
     height: 60px;
     padding-right: 50px;
+    padding-left: 50px;
 `
-const Bnput = styled.input`
-    height: 30px;
-    margin-left: -50px;
+const Submit = styled.input`
+    height: 46px;
+    width: 84px;
+    margin-top: 10px;
+    margin-left: -90px;
 `
 const Form = styled.form`
     display: flex;
@@ -46,10 +53,10 @@ const Search = ({ setData }) => {
     return (
         <SearchContainer>
             <Form onSubmit={handleSubmit}>
-                <img src={icon_search}/>
+                <SearchIcon src={icon_search}/>
                 <Input id="value" placeholder="Search Github username..."/>
                 {error ? <p>No results</p> : <Fragment />}
-                <Bnput type="submit" value="Search"/>
+                <Submit type="submit" value="Search"/>
             </Form>
         </SearchContainer>
     )
