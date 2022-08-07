@@ -2,19 +2,25 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Avatar = styled.img`
-    width: 130px;
-    height: 130px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
+    margin-left: 30px;
 `
 const DescriptionContainer = styled.div`
     display: flex;
     flex-direction: row;
+    align-items: center;
+    margin-right: auto;
 `
 const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 3px solid black;
+`
+const Profile = styled.div`
+
 `
 
 const UserDescription = ({ data, empty }) => {
@@ -32,11 +38,11 @@ const UserDescription = ({ data, empty }) => {
         <Container>
             <DescriptionContainer>
                 <Avatar src={data.avatar_url} />
-                <div>
+                <Profile>
                     {Object.keys(data).length !== 0 ? <p>{data.name}</p> : <p>{empty}</p>}
                     {Object.keys(data).length !== 0 ? <p>@{data.login}</p> : <p>{empty}</p>}
                     {Object.keys(data).length !== 0 ? <p>Joined {getDate(data.created_at)}</p> : <p>{empty}</p>}
-                </div>
+                </Profile>
             </DescriptionContainer>
             {data.bio ? <p>{data.bio}</p> : <p>{noBio}</p>}
         </Container>

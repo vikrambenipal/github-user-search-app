@@ -16,6 +16,7 @@ const Input = styled.input`
     height: 60px;
     padding-right: 50px;
     padding-left: 50px;
+    
 `
 const Submit = styled.input`
     height: 46px;
@@ -26,6 +27,7 @@ const Submit = styled.input`
 const Form = styled.form`
     display: flex;
     flex-direction: row;
+    width: 80%;
     img {
         align-self: center;
     }

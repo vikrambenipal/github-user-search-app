@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import axios from 'axios';
 import Header from './components/Header';
 import Search from './components/Search';
 import User from './components/User';
 
+const TopContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`
 function App() {
 
   const [data, setData] = useState({});
@@ -18,8 +23,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <Search setData={setData}/>
+      <TopContainer>
+        <Header />
+        <Search setData={setData}/>
+      </TopContainer>
       <User data={data}/>
     </div>
   );

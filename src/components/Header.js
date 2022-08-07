@@ -7,6 +7,7 @@ const HeaderContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-left: 30px;
 `
 
 const Theme = styled.div`
@@ -15,6 +16,10 @@ const Theme = styled.div`
   align-items: center;
   justify-content: right;
   cursor: pointer;
+  margin-right: 30px;
+  img {
+    margin-left: 16px;
+  }
 `
 
 const Header = () => {
