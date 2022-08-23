@@ -23,6 +23,7 @@ function App() {
 
   return (
     <div className="App">
+      
       <TopContainer>
         <Header />
         <Search setData={setData}/>

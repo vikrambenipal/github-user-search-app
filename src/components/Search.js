@@ -6,26 +6,30 @@ import icon_search from '../assets/icon-search.svg';
 const SearchContainer = styled.div`
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
 `
 const SearchIcon = styled.img`
+    position: absolute;
     margin-right: -40px;
+    left: 18px;
     z-index: 2;
 `
 const Input = styled.input`
     height: 60px;
     padding-right: 50px;
     padding-left: 50px;
-    
 `
 const Submit = styled.input`
+    position: absolute;
+    right: 30px;
     height: 46px;
     width: 84px;
     margin-top: 10px;
-    margin-left: -90px;
 `
 const Form = styled.form`
     display: flex;
+    position: relative;
     flex-direction: row;
     width: 80%;
     img {
