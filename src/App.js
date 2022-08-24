@@ -8,6 +8,7 @@ import User from './components/User';
 const TopContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `
 function App() {
 
