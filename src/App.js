@@ -9,6 +9,19 @@ const Container = styled.div`
   //max-width: 730px;
   border: 2px solid yellow;
 `
+const Row = styled.div`
+  display: flex;
+  border: 2px solid white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  h1 {
+    position: absolute;
+    left: 5%;
+  }
+`
 const TopContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -33,7 +46,9 @@ function App() {
         <Header />
         <Search setData={setData}/>
       </TopContainer>
-      <User data={data}/>
+      <Row>
+        <User data={data}/>
+      </Row> 
     </Container>
   );
 }
