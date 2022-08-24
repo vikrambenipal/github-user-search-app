@@ -1,6 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const media = {
+    tablet: '@media(min-width: 768px)',
+    desktop: '@media(min-width: 992px)'
+}
+
 const Avatar = styled.img`
     left: 0px;
     width: 70px;
@@ -18,7 +23,11 @@ const DescriptionContainer = styled.div`
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 100%;
+    width: 70%;
+    ${media.desktop}{
+        justify-content: left;
+        padding-left: 20px;
+    }
 `
 const Container = styled.div`
     display: flex;
@@ -26,6 +35,12 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     border: 3px solid black;
+    ${media.desktop}{
+        width: 70%;
+    }
+`
+const Bio = styled.p`
+    text-align: left;
 `
 const Profile = styled.div`
 
@@ -45,16 +60,17 @@ const UserDescription = ({ data, empty }) => {
     return (
         <Container>
             <DescriptionContainer>
-                <AvatarContainer>
+                {/* <AvatarContainer>
                     <Avatar src={data.avatar_url} />
-                </AvatarContainer>
+                </AvatarContainer> */}
                 <Profile>
                     {Object.keys(data).length !== 0 ? <h2>{data.name}</h2> : <p>{empty}</p>}
                     {Object.keys(data).length !== 0 ? <p>@{data.login}</p> : <p>{empty}</p>}
                     {Object.keys(data).length !== 0 ? <p>Joined {getDate(data.created_at)}</p> : <p>{empty}</p>}
+                    {data.bio ? <Bio>{data.bio}</Bio> : <Bio>{noBio}</Bio>}
                 </Profile>
+                
             </DescriptionContainer>
-            {data.bio ? <p>{data.bio}</p> : <p>{noBio}</p>}
         </Container>
   )
 }
