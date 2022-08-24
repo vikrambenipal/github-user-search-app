@@ -7,10 +7,10 @@ const Container = styled.div`
     justify-content: space-between;
     text-align: center;
     border: 3px solid red;
-    //width: 80%;
+    width: 80%;
     margin: 0 auto;
-    // padding-left: 10px;
-    // padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
 `
 const UserInfo = ({ data, empty }) => {
   return (

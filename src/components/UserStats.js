@@ -9,12 +9,18 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     border: 3px solid green;
+    width: 80%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
 `
 const Stat = styled.span`
     display: flex;
     flex-direction: row;
     img {
         align-self: center;
+        margin-left: -20px;
+        margin-right: 15px;
     }
 `
 const UserStats = ({ data, noResult }) => {
