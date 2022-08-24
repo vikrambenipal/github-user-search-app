@@ -5,6 +5,10 @@ import Header from './components/Header';
 import Search from './components/Search';
 import User from './components/User';
 
+const Container = styled.div`
+  //max-width: 730px;
+  border: 2px solid yellow;
+`
 const TopContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -24,13 +28,13 @@ function App() {
   },[])
 
   return (
-    <div className="App">
+    <Container className="App">
       <TopContainer>
         <Header />
         <Search setData={setData}/>
       </TopContainer>
       <User data={data}/>
-    </div>
+    </Container>
   );
 }
 

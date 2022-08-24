@@ -5,6 +5,10 @@ import UserInfo from './UserInfo';
 import UserStats from './UserStats';
 
 const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    //align-items: center;
     border: 3px solid blue;
     margin-top: 30px;
     width: 80%;

@@ -49,7 +49,7 @@ const UserDescription = ({ data, empty }) => {
                     <Avatar src={data.avatar_url} />
                 </AvatarContainer>
                 <Profile>
-                    {Object.keys(data).length !== 0 ? <p>{data.name}</p> : <p>{empty}</p>}
+                    {Object.keys(data).length !== 0 ? <h2>{data.name}</h2> : <p>{empty}</p>}
                     {Object.keys(data).length !== 0 ? <p>@{data.login}</p> : <p>{empty}</p>}
                     {Object.keys(data).length !== 0 ? <p>Joined {getDate(data.created_at)}</p> : <p>{empty}</p>}
                 </Profile>

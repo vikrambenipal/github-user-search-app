@@ -7,7 +7,7 @@ const Container = styled.div`
     justify-content: space-between;
     text-align: center;
     border: 3px solid red;
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     padding-left: 20px;
     padding-right: 20px;

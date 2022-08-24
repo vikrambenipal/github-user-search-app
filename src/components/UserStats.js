@@ -5,22 +5,39 @@ import icon_location from '../assets/icon-location.svg';
 import icon_twitter from '../assets/icon-twitter.svg';
 import icon_website from '../assets/icon-website.svg';
 
+const media = {
+    tablet: '@media(min-width: 768px)',
+    desktop: '@media(min-width: 992px)'
+}
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-    border: 3px solid green;
-    width: 80%;
-    margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    ${media.tablet}{
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-bottom: 50px;
+        justify-content: space-between;
+    }
+`
+const InfoContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    ${media.tablet}{
+        margin-left: 15%;
+        ${props => props.second ? 'right: 10%' : 'left: 12%'}
+    }
 `
 const Stat = styled.span`
     display: flex;
     flex-direction: row;
     img {
         align-self: center;
-        margin-left: -20px;
-        margin-right: 15px;
+        margin-right: 10px;
     }
 `
 const UserStats = ({ data, noResult }) => {
@@ -32,8 +49,8 @@ const UserStats = ({ data, noResult }) => {
     
   return (
     <div>
-        <div>
-            <Container>
+        <Container>
+            <InfoContainer second={false}>
                 <Stat>
                     <img src={icon_location}/>
                     {Object.keys(data).length !== 0 ? <p>{checkResult(data.location)}</p> : <p>{noResult}</p>}
@@ -42,8 +59,8 @@ const UserStats = ({ data, noResult }) => {
                     <img src={icon_website}/>
                     {Object.keys(data).length !== 0 ? <p>{checkResult(data.blog)}</p> : <p>{noResult}</p>}
                 </Stat>
-            </Container>
-            <Container>
+            </InfoContainer>
+            <InfoContainer second={true}>
                 <Stat>
                     <img src={icon_twitter}/>
                     {Object.keys(data).length !== 0 ? <p>{checkResult(data.twitter_username)}</p> : <p>{noResult}</p>}
@@ -52,8 +69,8 @@ const UserStats = ({ data, noResult }) => {
                     <img src={icon_company}/>
                     {Object.keys(data).length !== 0 ? <p>{checkResult(data.company)}</p> : <p>{noResult}</p>}
                 </Stat>
-            </Container>
-        </div>
+            </InfoContainer>
+        </Container>
     </div>
   )
 }
