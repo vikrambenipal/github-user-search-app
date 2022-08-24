@@ -11,7 +11,6 @@ const SearchContainer = styled.div`
 `
 const SearchIcon = styled.img`
     position: absolute;
-    margin-right: -40px;
     left: 18px;
     z-index: 2;
 `
@@ -35,6 +34,11 @@ const Form = styled.form`
     img {
         align-self: center;
     }
+`
+const Error = styled.p`
+    position: absolute;
+    right: 135px;
+    top: 8px;
 `
 const Search = ({ setData }) => {
 
@@ -61,7 +65,7 @@ const Search = ({ setData }) => {
             <Form onSubmit={handleSubmit}>
                 <SearchIcon src={icon_search}/>
                 <Input id="value" placeholder="Search Github username..."/>
-                {error ? <p>No results</p> : <Fragment />}
+                {error ? <Error>No results</Error> : <Fragment />}
                 <Submit type="submit" value="Search"/>
             </Form>
         </SearchContainer>
