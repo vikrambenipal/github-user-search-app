@@ -9,13 +9,13 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 80%;
+  max-width: 730px;
 `
 
 const Theme = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  //justify-content: right;
   cursor: pointer;
   img {
     margin-left: 16px;

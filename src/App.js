@@ -8,6 +8,7 @@ import User from './components/User';
 const TopContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 `
 function App() {
@@ -24,7 +25,6 @@ function App() {
 
   return (
     <div className="App">
-      
       <TopContainer>
         <Header />
         <Search setData={setData}/>

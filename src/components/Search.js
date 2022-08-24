@@ -34,6 +34,7 @@ const Form = styled.form`
     img {
         align-self: center;
     }
+    max-width: 730px;
 `
 const Error = styled.p`
     position: absolute;

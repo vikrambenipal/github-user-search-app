@@ -9,7 +9,7 @@ const Container = styled.div`
     margin-top: 30px;
     width: 80%;
     margin: 20px auto 0px auto;
-    //max-width: 700px;
+    max-width: 730px;
 `
 const User = ({ data }) => {
 
