@@ -7,18 +7,25 @@ const media = {
 }
 
 const Avatar = styled.img`
-    left: 0px;
-    width: 70px;
-    height: 70px;
+    // width: 70px;
+    // height: 70px;
+    width: 25%;
+    height: 25%;
     border-radius: 50%;
 `
 const AvatarContainer = styled.div`
+    display: flex;
     position: absolute;
-    width: 100%;
-    left: 20px;
+    left: -35px;
+    //width: 100%;
+    //left: 20px;
+    ${media.desktop}{
+        display: none;
+    }
 `
 const DescriptionContainer = styled.div`
     display: flex;
+    //border: 2px solid purple;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -60,9 +67,9 @@ const UserDescription = ({ data, empty }) => {
     return (
         <Container>
             <DescriptionContainer>
-                {/* <AvatarContainer>
+                <AvatarContainer>
                     <Avatar src={data.avatar_url} />
-                </AvatarContainer> */}
+                </AvatarContainer>
                 <Profile>
                     {Object.keys(data).length !== 0 ? <h2>{data.name}</h2> : <p>{empty}</p>}
                     {Object.keys(data).length !== 0 ? <p>@{data.login}</p> : <p>{empty}</p>}
