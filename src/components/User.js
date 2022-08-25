@@ -19,13 +19,15 @@ const Row = styled.div`
   }
 `
 const Avatar = styled.img`
+    width: 0px;
+    height: 0px;
     ${media.desktop}{
       display: visible;
       width: 20%;
       height: 20%;
       border-radius: 50%;
       margin-top: 35px;
-      margin-left: 15px;
+      margin-left: 25px;
     }
   `
 const Container = styled.div`
