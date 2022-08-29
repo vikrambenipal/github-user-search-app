@@ -44,6 +44,7 @@ const Container = styled.div`
     ${media.desktop}{
       //padding-left: 200px;
     }
+    background-color: #1E2A47;
 `
 const D = styled.div`
     display: flex;

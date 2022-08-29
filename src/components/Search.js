@@ -17,7 +17,21 @@ const SearchIcon = styled.img`
 const Input = styled.input`
     height: 60px;
     padding-right: 50px;
-    padding-left: 50px;
+    padding-left: 60px;
+    background-color: #1E2A47;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    outline: none;
+    caret-color: #0079FF;
+    line-height: 200px;
+    font-family: SpaceMonoRegular;
+    :focus{
+        color: white;
+    }
+    ::placeholder{
+        color: white;
+    }
 `
 const Submit = styled.input`
     position: absolute;
@@ -25,6 +39,15 @@ const Submit = styled.input`
     height: 46px;
     width: 84px;
     margin-top: 10px;
+    color: white;
+    background-color: #0079FF;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-family: SpaceMonoRegular;
+    :hover{
+        background-color: #60ABFF;
+    }
 `
 const Form = styled.form`
     display: flex;
@@ -40,6 +63,7 @@ const Error = styled.p`
     position: absolute;
     right: 135px;
     top: 8px;
+    color: #F74646;
 `
 const Search = ({ setData }) => {
 

@@ -6,11 +6,12 @@ const Container = styled.div`
     flex-direction: row;
     justify-content: space-between;
     text-align: center;
-    border: 3px solid red;
     width: 70%;
     margin: 0 auto;
     padding-left: 20px;
     padding-right: 20px;
+    border-radius: 15px;
+    background-color: #141D2F;
 `
 const UserInfo = ({ data, empty }) => {
   return (

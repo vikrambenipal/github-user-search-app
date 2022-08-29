@@ -35,6 +35,15 @@ const InfoContainer = styled.div`
 const Stat = styled.span`
     display: flex;
     flex-direction: row;
+    p,a {
+        width: 150px;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
     img {
         align-self: center;
         margin-right: 10px;
@@ -57,7 +66,7 @@ const UserStats = ({ data, noResult }) => {
                 </Stat>
                 <Stat>
                     <img src={icon_website}/>
-                    {Object.keys(data).length !== 0 ? <p>{checkResult(data.blog)}</p> : <p>{noResult}</p>}
+                    {Object.keys(data).length !== 0 ? <a href={data.blog} target="_blank">{checkResult(data.blog)}</a> : <p>{noResult}</p>}
                 </Stat>
             </InfoContainer>
             <InfoContainer second={true}>

@@ -1,8 +1,15 @@
+@font-face {
+  font-family: SpaceMonoRegular;
+  src: url('./Fonts/SpaceMono-Regular.ttf');
+}
+
 body {
   background-color: #141D2F;
 }
-h1,h2,p{
+
+h1,h2,p,a{
   color: white;
+  font-family: SpaceMonoRegular;
 }
 
 code {
