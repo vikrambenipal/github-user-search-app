@@ -11,7 +11,12 @@ const HeaderContainer = styled.div`
   width: 80%;
   max-width: 730px;
 `
-
+const P = styled.p`
+  user-select: none;
+`
+const Icon = styled.img`
+  user-select: none;
+`
 const Theme = styled.div`
   display: flex;
   flex-direction: row;
@@ -34,8 +39,8 @@ const Header = () => {
     <HeaderContainer>
         <h1>devfinder</h1>
         <Theme onClick={handleThemeChange}>
-            {isMoon ? <p>Dark</p> : <p>Light</p>}
-            <img src={isMoon ? icon_moon : icon_sun}/>
+            {isMoon ? <P>Dark</P> : <P>Light</P>}
+            <Icon src={isMoon ? icon_moon : icon_sun}/>
         </Theme>
     </HeaderContainer>
   )

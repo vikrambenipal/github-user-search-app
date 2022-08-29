@@ -11,6 +11,7 @@ const SearchContainer = styled.div`
 `
 const SearchIcon = styled.img`
     position: absolute;
+    user-select: none;
     left: 18px;
     z-index: 2;
 `
@@ -28,6 +29,7 @@ const Input = styled.input`
     font-family: SpaceMonoRegular;
     :focus{
         color: white;
+        background-color: #1E2A47;
     }
     ::placeholder{
         color: white;
@@ -61,8 +63,9 @@ const Form = styled.form`
 `
 const Error = styled.p`
     position: absolute;
+    user-select: none;
     right: 135px;
-    top: 8px;
+    top: 4px;
     color: #F74646;
 `
 const Search = ({ setData }) => {
