@@ -23,10 +23,11 @@ const Avatar = styled.img`
     height: 0px;
     ${media.desktop}{
       display: visible;
-      width: 20%;
-      height: 20%;
+      position: absolute;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      margin-top: 35px;
+      margin-top: 40px;
       margin-left: 25px;
     }
   `

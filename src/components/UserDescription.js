@@ -9,14 +9,15 @@ const media = {
 const Avatar = styled.img`
     // width: 70px;
     // height: 70px;
-    width: 25%;
-    height: 25%;
+    width: 20%;
+    height: 20%;
     border-radius: 50%;
 `
 const AvatarContainer = styled.div`
     display: flex;
     position: absolute;
-    left: -35px;
+    top: 30px;
+    left: -30%;
     //width: 100%;
     //left: 20px;
     ${media.desktop}{
@@ -44,6 +45,11 @@ const Container = styled.div`
     border: 3px solid black;
     ${media.desktop}{
         width: 70%;
+        padding-right: 30%;
+        margin-right: 50px;
+        p{
+            width: 160%;
+        }
     }
 `
 const Bio = styled.p`
@@ -56,8 +62,7 @@ const Profile = styled.div`
 const UserDescription = ({ data, empty }) => {
 
     console.log(data);
-    const noBio = "This profile has no bio."
-
+    const noBio = "LoreLorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis erosLorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis erosLorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis erosm ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros."
     const getDate = (dateString) => {
         const date = new Date(dateString);
         const month = date.toLocaleString('default', { month: 'long' });
