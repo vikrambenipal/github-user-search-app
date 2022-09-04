@@ -12,6 +12,7 @@ const Container = styled.div`
     margin-top: 30px;
     width: 80%;
     margin: 20px auto 0px auto;
+    margin-bottom: 40px;
     max-width: 730px;
 `
 const ParentContainer = styled.div`
@@ -19,6 +20,7 @@ const ParentContainer = styled.div`
     flex-direction: row;
     justify-content: space-between;
     background-color: ${props => props.dark ? theme.dark.content_background : theme.light.content_background};
+    box-shadow: ${props => props.dark ? "none" : theme.light.box_shadow};
     margin-top: 20px;
     border-radius: 15px;
     width: 80%;

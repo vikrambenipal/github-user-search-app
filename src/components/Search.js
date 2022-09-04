@@ -28,6 +28,7 @@ const Input = styled.input`
     caret-color: #0079FF;
     line-height: 200px;
     font-family: SpaceMonoRegular;
+    box-shadow: ${props => props.dark ? "none" : theme.light.box_shadow};
     :focus{
         color: ${props => props.dark ? theme.dark.text_color : theme.light.text_color};
         background-color: ${props => props.dark ? theme.dark.content_background : theme.light.content_background};

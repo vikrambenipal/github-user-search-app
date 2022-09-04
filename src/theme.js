@@ -14,7 +14,8 @@ const theme = {
         text_color: "#4B6A9B",
         greyed_out: "#8E94A3",
         theme_hover: "invert(34%) sepia(68%) saturate(352%) hue-rotate(176deg) brightness(103%) contrast(89%)",
-        heading: "#222731"
+        heading: "#222731",
+        box_shadow: "5px 10px 15px rgb(70, 96, 187, 0.19)"
         
     },
     transition: "1"
