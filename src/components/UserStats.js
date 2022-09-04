@@ -71,7 +71,7 @@ const UserStats = ({ data, noResult, dark }) => {
                 </Stat>
                 <Stat>
                     <img src={icon_website}/>
-                    {Object.keys(data).length !== 0 ? <a href={data.blog} target="_blank">{checkResult(data.blog)}</a> : <p>{noResult}</p>}
+                    {Object.keys(data).length !== 0 && checkResult(data.blog) !== noResult ? <a href={data.blog} target="_blank">{checkResult(data.blog)}</a> : <p>{noResult}</p>}
                 </Stat>
             </InfoContainer>
             <InfoContainer second={true}>
