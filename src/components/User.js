@@ -50,7 +50,10 @@ const D = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background-color: #1E2A47;
     border: 2px solid pink;
+    margin-top: 20px;
+    border-radius: 15px;
     width: 80%;
     max-width: 730px;
 `

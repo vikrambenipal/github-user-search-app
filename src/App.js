@@ -7,11 +7,9 @@ import User from './components/User';
 
 const Container = styled.div`
   //max-width: 730px;
-  border: 2px solid yellow;
 `
 const Row = styled.div`
   display: flex;
-  border: 2px solid white;
   flex-direction: column;
   justify-content: center;
   align-items: center;

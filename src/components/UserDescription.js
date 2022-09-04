@@ -15,9 +15,9 @@ const Avatar = styled.img`
 `
 const AvatarContainer = styled.div`
     display: flex;
-    position: absolute;
-    top: 30px;
-    left: -30%;
+    //position: absolute;
+    // top: 30px;
+    // left: -30%;
     //width: 100%;
     //left: 20px;
     ${media.desktop}{
@@ -29,8 +29,8 @@ const DescriptionContainer = styled.div`
     //border: 2px solid purple;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    position: relative;
+    // justify-content: center;
+    //position: relative;
     width: 70%;
     ${media.desktop}{
         justify-content: left;
@@ -81,7 +81,6 @@ const UserDescription = ({ data, empty }) => {
                     {Object.keys(data).length !== 0 ? <p>Joined {getDate(data.created_at)}</p> : <p>{empty}</p>}
                     {data.bio ? <Bio>{data.bio}</Bio> : <Bio>{noBio}</Bio>}
                 </Profile>
-                
             </DescriptionContainer>
         </Container>
   )
