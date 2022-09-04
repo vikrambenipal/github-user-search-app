@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import theme from './theme';
 import axios from 'axios';
 import Header from './components/Header';
 import Search from './components/Search';
@@ -11,6 +12,7 @@ const Row = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  border: 2px solid ${theme.light}
   width: 100%;
   h1 {
     position: absolute;
