@@ -7,8 +7,8 @@ const media = {
 }
 
 const Avatar = styled.img`
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     align-self: center;
     margin-right: 20px;
@@ -57,18 +57,32 @@ const Container = styled.div`
 `
 const Bio = styled.p`
     text-align: left;
+    margin-bottom: 30px;
 `
 const Profile = styled.div`
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: left;
+    margin-bottom: 15px;
+    margin-top: 10px;
+`
+const ProfileContent = styled.div`
+    h2 {
+        margin: 0px auto;
+    }
+    p {
+        margin: 5px auto;
+    }
+    .login {
+        color: #0079FF;
+    }
 `
 
 const UserDescription = ({ data, empty }) => {
 
     console.log(data);
-    const noBio = "LoreLorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis erosLorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis erosLorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis erosm ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros."
+    const noBio = "This user has no bio"
     const getDate = (dateString) => {
         const date = new Date(dateString);
         const month = date.toLocaleString('default', { month: 'long' });
@@ -80,11 +94,11 @@ const UserDescription = ({ data, empty }) => {
             <DescriptionContainer>
                 <Profile>
                     <Avatar src={data.avatar_url}/>
-                    <div>
+                    <ProfileContent>
                         {Object.keys(data).length !== 0 ? <h2>{data.name}</h2> : <p>{empty}</p>}
-                        {Object.keys(data).length !== 0 ? <p>@{data.login}</p> : <p>{empty}</p>}
+                        {Object.keys(data).length !== 0 ? <p className="login">@{data.login}</p> : <p>{empty}</p>}
                         {Object.keys(data).length !== 0 ? <p>Joined {getDate(data.created_at)}</p> : <p>{empty}</p>}
-                    </div>
+                    </ProfileContent>
                 </Profile>
                 {data.bio ? <Bio>{data.bio}</Bio> : <Bio>{noBio}</Bio>}
             </DescriptionContainer>

@@ -3,6 +3,11 @@ import styled from 'styled-components';
 import axios from 'axios';
 import icon_search from '../assets/icon-search.svg';
 
+const media = {
+    tablet: '@media(min-width: 768px)',
+    desktop: '@media(min-width: 992px)'
+}
+
 const SearchContainer = styled.div`
     display: flex;
     justify-content: center;
@@ -62,11 +67,18 @@ const Form = styled.form`
     max-width: 730px;
 `
 const Error = styled.p`
-    position: absolute;
     user-select: none;
     right: 135px;
     top: 4px;
     color: #F74646;
+    margin: 10px auto;
+`
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 `
 const Search = ({ setData }) => {
 
@@ -87,15 +99,21 @@ const Search = ({ setData }) => {
             setError(true);
         })
     }
+    const handleClick = () => {
+        setError(false);
+    }
 
     return (
         <SearchContainer>
-            <Form onSubmit={handleSubmit}>
-                <SearchIcon src={icon_search}/>
-                <Input id="value" placeholder="Search Github username..."/>
+            <Container>
+                <Form onClick={handleClick} onSubmit={handleSubmit}>
+                    <SearchIcon src={icon_search}/>
+                    <Input id="value" placeholder="Search Github username..."/>
+                    <Submit type="submit" value="Search"/>
+                </Form>
                 {error ? <Error>No results</Error> : <Fragment />}
-                <Submit type="submit" value="Search"/>
-            </Form>
+            </Container>
+            
         </SearchContainer>
     )
 }
