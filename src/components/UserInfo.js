@@ -2,9 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import theme from '../theme';
 
+const media = {
+    phone: '@media(min-width: 450px)',
+    desktop: '@media(min-width: 992px)'
+}
+
 const Container = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     text-align: center;
     width: 90%;
@@ -15,6 +20,9 @@ const Container = styled.div`
         color: ${props => props.dark ? theme.dark.text_color : theme.light.text_color};
     }
     background-color: ${props => props.dark ? theme.dark.app_background : theme.light.app_background};
+    ${media.phone}{
+        flex-direction: row;
+    }
 `
 const UserInfo = ({ data, empty, dark }) => {
   return (
