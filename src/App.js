@@ -5,9 +5,6 @@ import Header from './components/Header';
 import Search from './components/Search';
 import User from './components/User';
 
-const Container = styled.div`
-  //max-width: 730px;
-`
 const Row = styled.div`
   display: flex;
   flex-direction: column;
@@ -39,7 +36,7 @@ function App() {
   },[])
 
   return (
-    <Container className="App">
+    <div className="App">
       <TopContainer>
         <Header />
         <Search setData={setData}/>
@@ -47,7 +44,7 @@ function App() {
       <Row>
         <User data={data}/>
       </Row> 
-    </Container>
+    </div>
   );
 }
 

@@ -17,43 +17,17 @@ const Avatar = styled.img`
         height: 100px;
     }
 `
-const AvatarContainer = styled.div`
-    display: flex;
-    //position: absolute;
-    // top: 30px;
-    // left: -30%;
-    //width: 100%;
-    //left: 20px;
-    ${media.desktop}{
-        display: none;
-    }
-`
 const DescriptionContainer = styled.div`
     display: flex;
-    //border: 2px solid purple;
     flex-direction: column;
     align-items: center;
-    // justify-content: center;
-    //position: relative;
     width: 95%;
-    ${media.desktop}{
-        // justify-content: left;
-        // padding-left: 20px;
-    }
 `
 const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: left;
     align-items: left;
-    ${media.desktop}{
-        // width: 70%;
-        // padding-right: 30%;
-        // margin-right: 50px;
-        // p{
-        //     width: 160%;
-        // }
-    }
 `
 const Bio = styled.p`
     text-align: left;

@@ -3,11 +3,6 @@ import styled from 'styled-components';
 import axios from 'axios';
 import icon_search from '../assets/icon-search.svg';
 
-const media = {
-    tablet: '@media(min-width: 768px)',
-    desktop: '@media(min-width: 992px)'
-}
-
 const SearchContainer = styled.div`
     display: flex;
     justify-content: center;
