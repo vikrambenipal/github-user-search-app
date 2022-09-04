@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import theme from '../theme';
 
 const media = {
     tablet: '@media(min-width: 768px)',
@@ -22,6 +23,9 @@ const DescriptionContainer = styled.div`
     flex-direction: column;
     align-items: center;
     width: 95%;
+    h2,p{
+        color: ${props => props.dark ? theme.dark.text_color : theme.light.text_color};
+    }
 `
 const Container = styled.div`
     display: flex;
@@ -53,7 +57,7 @@ const ProfileContent = styled.div`
     }
 `
 
-const UserDescription = ({ data, empty }) => {
+const UserDescription = ({ data, empty, dark }) => {
 
     console.log(data);
     const noBio = "This user has no bio"
@@ -65,7 +69,7 @@ const UserDescription = ({ data, empty }) => {
 
     return (
         <Container>
-            <DescriptionContainer>
+            <DescriptionContainer dark={dark}>
                 <Profile>
                     <Avatar src={data.avatar_url}/>
                     <ProfileContent>

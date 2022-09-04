@@ -2,6 +2,7 @@ import React, { useState, Fragment } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import icon_search from '../assets/icon-search.svg';
+import theme from '../theme';
 
 const SearchContainer = styled.div`
     display: flex;
@@ -19,7 +20,7 @@ const Input = styled.input`
     height: 60px;
     padding-right: 50px;
     padding-left: 60px;
-    background-color: #1E2A47;
+    background-color: ${props => props.dark ? theme.dark.content_background : theme.light.content_background};
     border: none;
     border-radius: 15px;
     cursor: pointer;
@@ -28,11 +29,12 @@ const Input = styled.input`
     line-height: 200px;
     font-family: SpaceMonoRegular;
     :focus{
-        color: white;
-        background-color: #1E2A47;
+        color: ${props => props.dark ? theme.dark.text_color : theme.light.text_color};
+        background-color: ${props => props.dark ? theme.dark.content_background : theme.light.content_background};
     }
+    color: ${props => props.dark ? theme.dark.text_color : theme.light.text_color};
     ::placeholder{
-        color: white;
+        color: ${props => props.dark ? theme.dark.text_color : theme.light.text_color};
     }
 `
 const Submit = styled.input`
@@ -40,7 +42,7 @@ const Submit = styled.input`
     right: 30px;
     height: 46px;
     width: 84px;
-    margin-top: 10px;
+    margin-top: 8px;
     color: white;
     background-color: #0079FF;
     border: none;
@@ -75,7 +77,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
 `
-const Search = ({ setData }) => {
+const Search = ({ dark, setData }) => {
 
     const [error, setError] = useState(false);
     
@@ -103,7 +105,7 @@ const Search = ({ setData }) => {
             <Container>
                 <Form onClick={handleClick} onSubmit={handleSubmit}>
                     <SearchIcon src={icon_search}/>
-                    <Input id="value" placeholder="Search Github username..."/>
+                    <Input dark={dark} id="value" placeholder="Search Github username..."/>
                     <Submit type="submit" value="Search"/>
                 </Form>
                 {error ? <Error>No results</Error> : <Fragment />}

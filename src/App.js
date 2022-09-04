@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import theme from './theme';
 import axios from 'axios';
 import Header from './components/Header';
 import Search from './components/Search';
 import User from './components/User';
 
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${props => props.dark ? theme.dark.app_background : theme.light.app_background};
+  }
+`
 const Row = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  border: 2px solid ${theme.light}
   width: 100%;
   h1 {
     position: absolute;
@@ -28,6 +32,7 @@ const TopContainer = styled.div`
 function App() {
 
   const [data, setData] = useState({});
+  const [dark, setDark] = useState(true);
 
   useEffect(() => {
     console.log(new Date("2016-12-28T01:37:11Z"));
@@ -37,14 +42,19 @@ function App() {
     })
   },[])
 
+  const handleTheme = () => {
+    setDark(!dark);
+  }
+
   return (
     <div className="App">
+      <GlobalStyle dark={dark}/>
       <TopContainer>
-        <Header />
-        <Search setData={setData}/>
+        <Header dark={dark} handleTheme={handleTheme}/>
+        <Search dark={dark} setData={setData}/>
       </TopContainer>
       <Row>
-        <User data={data}/>
+        <User data={data} dark={dark}/>
       </Row> 
     </div>
   );

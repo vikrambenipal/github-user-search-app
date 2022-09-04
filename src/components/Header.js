@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import styled from 'styled-components'
 import icon_moon from '../assets/icon-moon.svg';
 import icon_sun from '../assets/icon-sun.svg';
+import theme from '../theme';
 
+const Heading = styled.h1`
+  color: ${props => props.dark ? theme.dark.heading : theme.light.heading};
+`
 const HeaderContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -13,6 +17,7 @@ const HeaderContainer = styled.div`
 `
 const P = styled.p`
   user-select: none;
+  color: ${props => props.dark ? theme.dark.text_color : theme.light.text_color};
 `
 const Icon = styled.img`
   user-select: none;
@@ -25,22 +30,28 @@ const Theme = styled.div`
   img {
     margin-left: 16px;
   }
+  :hover{
+    p,img {
+      filter: ${props => props.dark ? theme.dark.theme_hover : theme.light.theme_hover};
+    }
+  }
 `
 
-const Header = () => {
+const Header = ({ dark, handleTheme }) => {
 
   const [isMoon, setMoon] = useState(true);
 
   const handleThemeChange = () => {
     setMoon(!isMoon);
+    handleTheme();
   }
 
   return (
     <HeaderContainer>
-        <h1>devfinder</h1>
+        <Heading dark={dark}>devfinder</Heading>
         <Theme onClick={handleThemeChange}>
-            {isMoon ? <P>Dark</P> : <P>Light</P>}
-            <Icon src={isMoon ? icon_moon : icon_sun}/>
+            {isMoon ? <P dark={dark}>Light</P> : <P dark={dark}>Dark</P>}
+            <Icon src={isMoon ? icon_sun : icon_moon}/>
         </Theme>
     </HeaderContainer>
   )

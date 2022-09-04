@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import theme from '../theme';
 
 const Container = styled.div`
     display: flex;
@@ -7,14 +8,17 @@ const Container = styled.div`
     justify-content: space-between;
     text-align: center;
     width: 90%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
     border-radius: 15px;
-    background-color: #141D2F;
+    p {
+        color: ${props => props.dark ? theme.dark.text_color : theme.light.text_color};
+    }
+    background-color: ${props => props.dark ? theme.dark.app_background : theme.light.app_background};
 `
-const UserInfo = ({ data, empty }) => {
+const UserInfo = ({ data, empty, dark }) => {
   return (
-    <Container>
+    <Container dark={dark}>
         <div>
             <p>Repos</p>
             {Object.keys(data).length !== 0 ? <p>{data.public_repos}</p> : <p>{empty}</p>}

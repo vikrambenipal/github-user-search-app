@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import UserDescription from './UserDescription';
 import UserInfo from './UserInfo';
 import UserStats from './UserStats';
+import theme from '../theme';
 
 const Container = styled.div`
     display: flex;
@@ -12,29 +13,28 @@ const Container = styled.div`
     width: 80%;
     margin: 20px auto 0px auto;
     max-width: 730px;
-    background-color: #1E2A47;
 `
 const ParentContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #1E2A47;
+    background-color: ${props => props.dark ? theme.dark.content_background : theme.light.content_background};
     margin-top: 20px;
     border-radius: 15px;
     width: 80%;
     max-width: 730px;
 `
-const User = ({ data }) => {
+const User = ({ data, dark }) => {
 
   const empty = "---";
   const noResult = "Not Available";
 
   return (
-    <ParentContainer>
+    <ParentContainer dark={dark}>
       <Container>
-        <UserDescription data={data} empty={empty} />
-        <UserInfo data={data} empty={empty} />
-        <UserStats data={data} noResult={noResult} />
+        <UserDescription data={data} empty={empty} dark={dark}/>
+        <UserInfo data={data} empty={empty} dark={dark} />
+        <UserStats data={data} noResult={noResult} dark={dark}/>
       </Container>
     </ParentContainer>
   )

@@ -4,6 +4,7 @@ import icon_company from '../assets/icon-company.svg';
 import icon_location from '../assets/icon-location.svg';
 import icon_twitter from '../assets/icon-twitter.svg';
 import icon_website from '../assets/icon-website.svg';
+import theme from '../theme';
 
 const media = {
     tablet: '@media(min-width: 768px)',
@@ -15,6 +16,12 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     width: 70%;
+    p, a {
+        color: ${props => props.dark ? theme.dark.text_color : theme.light.text_color};
+    }
+    img {
+        filter: ${props => props.dark ? theme.dark.theme_hover : theme.light.theme_hover};
+    }
     ${media.tablet}{
         flex-direction: row;
         justify-content: space-evenly;
@@ -39,7 +46,6 @@ const Stat = styled.span`
     }
     a {
         text-decoration: none;
-        color: white;
         margin-top: 16px;
         margin-bottom: 16px;
     }
@@ -48,7 +54,7 @@ const Stat = styled.span`
         margin-right: 10px;
     }
 `
-const UserStats = ({ data, noResult }) => {
+const UserStats = ({ data, noResult, dark }) => {
 
     const checkResult = (result) => {
         if(result) return result;
@@ -57,7 +63,7 @@ const UserStats = ({ data, noResult }) => {
     
   return (
     <div>
-        <Container>
+        <Container dark={dark}>
             <InfoContainer second={false}>
                 <Stat>
                     <img src={icon_location}/>
