@@ -6,8 +6,8 @@ const Container = styled.div`
     flex-direction: row;
     justify-content: space-between;
     text-align: center;
-    width: 70%;
-    margin: 0 auto;
+    width: 90%;
+    //margin: 0 auto;
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 15px;

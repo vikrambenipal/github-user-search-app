@@ -7,11 +7,15 @@ const media = {
 }
 
 const Avatar = styled.img`
-    // width: 70px;
-    // height: 70px;
-    width: 20%;
-    height: 20%;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
+    align-self: center;
+    margin-right: 20px;
+    ${media.tablet}{
+        width: 100px;
+        height: 100px;
+    }
 `
 const AvatarContainer = styled.div`
     display: flex;
@@ -27,36 +31,38 @@ const AvatarContainer = styled.div`
 const DescriptionContainer = styled.div`
     display: flex;
     //border: 2px solid purple;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     // justify-content: center;
     //position: relative;
-    width: 70%;
+    width: 95%;
     ${media.desktop}{
-        justify-content: left;
-        padding-left: 20px;
+        // justify-content: left;
+        // padding-left: 20px;
     }
 `
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid black;
+    justify-content: left;
+    align-items: left;
     ${media.desktop}{
-        width: 70%;
-        padding-right: 30%;
-        margin-right: 50px;
-        p{
-            width: 160%;
-        }
+        // width: 70%;
+        // padding-right: 30%;
+        // margin-right: 50px;
+        // p{
+        //     width: 160%;
+        // }
     }
 `
 const Bio = styled.p`
     text-align: left;
 `
 const Profile = styled.div`
-
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
 `
 
 const UserDescription = ({ data, empty }) => {
@@ -72,15 +78,15 @@ const UserDescription = ({ data, empty }) => {
     return (
         <Container>
             <DescriptionContainer>
-                <AvatarContainer>
-                    <Avatar src={data.avatar_url} />
-                </AvatarContainer>
                 <Profile>
-                    {Object.keys(data).length !== 0 ? <h2>{data.name}</h2> : <p>{empty}</p>}
-                    {Object.keys(data).length !== 0 ? <p>@{data.login}</p> : <p>{empty}</p>}
-                    {Object.keys(data).length !== 0 ? <p>Joined {getDate(data.created_at)}</p> : <p>{empty}</p>}
-                    {data.bio ? <Bio>{data.bio}</Bio> : <Bio>{noBio}</Bio>}
+                    <Avatar src={data.avatar_url}/>
+                    <div>
+                        {Object.keys(data).length !== 0 ? <h2>{data.name}</h2> : <p>{empty}</p>}
+                        {Object.keys(data).length !== 0 ? <p>@{data.login}</p> : <p>{empty}</p>}
+                        {Object.keys(data).length !== 0 ? <p>Joined {getDate(data.created_at)}</p> : <p>{empty}</p>}
+                    </div>
                 </Profile>
+                {data.bio ? <Bio>{data.bio}</Bio> : <Bio>{noBio}</Bio>}
             </DescriptionContainer>
         </Container>
   )

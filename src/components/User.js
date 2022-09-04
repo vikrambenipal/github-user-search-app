@@ -36,7 +36,6 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: right;
     //align-items: center;
-    border: 3px solid blue;
     margin-top: 30px;
     width: 80%;
     margin: 20px auto 0px auto;
@@ -51,7 +50,6 @@ const D = styled.div`
     flex-direction: row;
     justify-content: space-between;
     background-color: #1E2A47;
-    border: 2px solid pink;
     margin-top: 20px;
     border-radius: 15px;
     width: 80%;
@@ -64,7 +62,6 @@ const User = ({ data }) => {
 
   return (
     <D>
-      <Avatar src={data.avatar_url}/>
       <Container>
         <UserDescription data={data} empty={empty} />
         <UserInfo data={data} empty={empty} />

@@ -26,10 +26,9 @@ const Container = styled.div`
 const InfoContainer = styled.div`
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 100%;
     ${media.tablet}{
-        margin-left: 15%;
-        ${props => props.second ? 'right: 10%' : 'left: 12%'}
+        ${props => props.second ? 'margin-left: 30%' : 'margin-left: 0%'}
     }
 `
 const Stat = styled.span`
