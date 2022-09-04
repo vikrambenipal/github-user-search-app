@@ -9,6 +9,7 @@ import User from './components/User';
 const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${props => props.dark ? theme.dark.app_background : theme.light.app_background};
+    transition: 1s;
   }
 `
 const Row = styled.div`

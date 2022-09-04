@@ -37,6 +37,7 @@ const Input = styled.input`
     ::placeholder{
         color: ${props => props.dark ? theme.dark.text_color : theme.light.text_color};
     }
+    transition: 1s;
 `
 const Submit = styled.input`
     position: absolute;

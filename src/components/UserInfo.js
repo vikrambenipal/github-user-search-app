@@ -20,6 +20,7 @@ const Container = styled.div`
         color: ${props => props.dark ? theme.dark.text_color : theme.light.text_color};
     }
     background-color: ${props => props.dark ? theme.dark.app_background : theme.light.app_background};
+    transition: 1s;
     ${media.phone}{
         flex-direction: row;
     }

@@ -21,6 +21,7 @@ const ParentContainer = styled.div`
     justify-content: space-between;
     background-color: ${props => props.dark ? theme.dark.content_background : theme.light.content_background};
     box-shadow: ${props => props.dark ? "none" : theme.light.box_shadow};
+    transition: 1s;
     margin-top: 20px;
     border-radius: 15px;
     width: 80%;
