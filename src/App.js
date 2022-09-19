@@ -12,6 +12,10 @@ const GlobalStyle = createGlobalStyle`
     transition: 1s;
   }
 `
+
+const Container = styled.div`
+  margin-bottom: 60px;
+`
 const Row = styled.div`
   display: flex;
   flex-direction: column;
@@ -30,6 +34,7 @@ const TopContainer = styled.div`
   justify-content: center;
   align-items: center;
 `
+
 function App() {
 
   const [data, setData] = useState({});
@@ -48,7 +53,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <Container className="App">
       <GlobalStyle dark={dark}/>
       <TopContainer>
         <Header dark={dark} handleTheme={handleTheme}/>
@@ -57,7 +62,7 @@ function App() {
       <Row>
         <User data={data} dark={dark}/>
       </Row> 
-    </div>
+    </Container>
   );
 }
 

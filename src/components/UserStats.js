@@ -26,7 +26,7 @@ const Container = styled.div`
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
-        padding-bottom: 50px;
+        padding-bottom: 20px;
         justify-content: space-between;
     }
 `
@@ -35,7 +35,7 @@ const InfoContainer = styled.div`
     flex-direction: column;
     width: 100%;
     ${media.tablet}{
-        ${props => props.second ? 'margin-left: 30%' : 'margin-left: 0%'}
+        ${props => props.second ? 'margin-left: 40%' : 'margin-left: 0%'}
     }
 `
 const Stat = styled.span`
@@ -66,21 +66,21 @@ const UserStats = ({ data, noResult, dark }) => {
         <Container dark={dark}>
             <InfoContainer second={false}>
                 <Stat>
-                    <img src={icon_location}/>
+                    <img src={icon_location} alt=""/>
                     {Object.keys(data).length !== 0 ? <p>{checkResult(data.location)}</p> : <p>{noResult}</p>}
                 </Stat>
                 <Stat>
-                    <img src={icon_website}/>
-                    {Object.keys(data).length !== 0 && checkResult(data.blog) !== noResult ? <a href={data.blog} target="_blank">{checkResult(data.blog)}</a> : <p>{noResult}</p>}
+                    <img src={icon_website} alt="" className="link"/>
+                    {Object.keys(data).length !== 0 && checkResult(data.blog) !== noResult ? <a href={data.blog} rel="noreferrer" target="_blank">{checkResult(data.blog)}</a> : <p>{noResult}</p>}
                 </Stat>
             </InfoContainer>
-            <InfoContainer second={true}>
+            <InfoContainer className="second" second={true}>
                 <Stat>
-                    <img src={icon_twitter}/>
+                    <img src={icon_twitter} alt=""/>
                     {Object.keys(data).length !== 0 ? <p>{checkResult(data.twitter_username)}</p> : <p>{noResult}</p>}
                 </Stat>
                 <Stat>
-                    <img src={icon_company}/>
+                    <img src={icon_company} alt=""/>
                     {Object.keys(data).length !== 0 ? <p>{checkResult(data.company)}</p> : <p>{noResult}</p>}
                 </Stat>
             </InfoContainer>
